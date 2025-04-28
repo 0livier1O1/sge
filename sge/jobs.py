@@ -41,7 +41,6 @@ class JobPool(object):
 		self.base_path = kwargs['base_path']
 		self.logger = kwargs['logger']
 
-
 	def distribute(self, agent):
 		if self.to_distribute:
 			job = self.to_distribute.pop(0)

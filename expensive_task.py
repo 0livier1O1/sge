@@ -12,7 +12,7 @@ def expensive_task(A, B, gpu_id, cpu=False, **kwargs):
     
     O = torch.zeros(A.shape[0], B.shape[1]).to(device=device)
 
-    for i in range(1000000):
+    for i in range(10):
         O += (A @ M) @ B
         
     # time.sleep(5)
@@ -22,8 +22,8 @@ def expensive_task(A, B, gpu_id, cpu=False, **kwargs):
 
 if __name__ == "__main__":
     # Example use
-    m = 10000
-    K = 5000
+    m = 1000
+    K = 50000
 
     data = {
         'matrix_a': torch.randn(K, m),

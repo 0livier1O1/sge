@@ -4,14 +4,21 @@ from sge.jobs import Job
 import os, logging
 
 BASE = './sge/comms/'  # Where to keep file system
-gpus = 2   
+GPU_COUNT = 2   
+HOT_START = False  # Set to False if you want to start agents from scratch, True if you want to customized sessions 
 
 
 if __name__ == '__main__':
 
+    comms_system = ["log", "agent_pool", "job_pool", "result_pool", "data"]
     # Start agents
-    os.system(f"./start_agents.sh {gpus} {BASE}")
-
+    if not HOT_START:
+        os.system(f"./start_agents.sh {GPU_COUNT} {BASE}")  # DO NOT RUN IF 
+    else:
+        for folder in comms_system:
+            if not os.path.exists(BASE + folder):
+                raise ValueError(f"Folder {BASE + folder} does not exist. Please check the BASE path and try again.")
+        
     # Some logging 
     log_name = BASE + 'log/sge_example.log'
 
