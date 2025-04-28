@@ -1,0 +1,15 @@
+# Project TODOs
+
+## GPU Management
+- [!!!] Lock GPU in gpu_session.py to prevent other processes from using it
+
+## Agent Management
+- [!!!] Need shared data path to populate agents (agent.py)
+- [!!] Put new agents directly in available agents (master.py)
+- [!] Shared data is needed (even an empty matrix) to let agents properly display status to master (main.py)
+
+## Job Processing
+- [!] Implement result handling in jobs.py (e.g., pass to JobPool or collect files)
+
+## Code Organization
+- [!] Review and potentially refactor agent availability checking in master.py

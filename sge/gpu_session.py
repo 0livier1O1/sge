@@ -9,7 +9,6 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 agent_id = int(sys.argv[1])
 BASE = sys.argv[2]
 
-
 # Set up a log
 log_name = BASE + '/log/{}.log'.format(agent_id)
 logging.basicConfig(
@@ -42,6 +41,7 @@ if __name__=="__main__":
     Path(BASE + '/agent_pool/{}.POOL'.format(agent_id)).touch()  
 
     while True:
+        # TODO Lock GPU
         flag, shared_data = check_and_load(agent_id)  # Check if any job is waiting
         
         if flag:

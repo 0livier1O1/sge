@@ -1,10 +1,10 @@
 from sge.master import Master
 from sge.jobs import Job
 
-import os, logging, sys
+import os, logging
 
-BASE = './sge/comms/'
-gpus = 2    
+BASE = './sge/comms/'  # Where to keep file system
+gpus = 2   
 
 
 if __name__ == '__main__':

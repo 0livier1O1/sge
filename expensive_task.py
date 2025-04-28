@@ -21,6 +21,7 @@ def expensive_task(A, B, gpu_id, cpu=False, **kwargs):
 
 
 if __name__ == "__main__":
+    # Example use
     m = 10000
     K = 5000
 
