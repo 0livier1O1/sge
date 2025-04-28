@@ -1,10 +1,12 @@
-# Parallel GPU Processing Project
+# Parallel GPU Processing template
 
-Simple low-level program template to distribute tasks on GPUs using the Sun Grid Engine paradigm. The example use case is a pytorch example that simply copies data to the GPU and perform some matrix operations.
+Simple low-level program template to distribute tasks on GPUs using the Sun Grid Engine paradigm. The example use case is a pytorch tensor multiplication with copying data to GPU and perfoming operations on it.
 
 ## Workflow
 
-<img src="sge.png" width="500" alt="SGE Performance Chart"/>
+<p align="center">
+  <img src="sge.png" width="500" alt="SGE Performance Chart"/>
+</p>
 
 1. Running `python gpu_session.py gpu_id base_folder` opens a python session, locks GPU `gpu_id` to that session, and listens for job in `base_folder\agent_pool\{gpu_id}.POOL`. 
     - Do this for as many GPUs (in different terminal or tmux sessions) or 
