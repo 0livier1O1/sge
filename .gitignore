@@ -1,1 +1,3 @@
 /sge/comms/
+__pycache__/
+.vscode/
