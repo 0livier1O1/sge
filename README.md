@@ -16,9 +16,9 @@ Simple low-level program template to distribute tasks on GPUs using the Sun Grid
 
 ## Usage
 This template can be used to distribute tasks on GPU, as part of a bigger computationally intensive program. In a typical use case, 
-1. The first step is to up `expensive_task.py` and ensure GPU usage in the expensive function (for example in pytorch, this is done via `.to(device)` where device is of type cuda. 
+1. The first step is to up `expensive_task.py` and ensure GPU usage in the expensive function (for example in pytorch, this is done via `.to(device)` where device is of type cuda). 
 2. Set up the tasks in main.py, this is a list of arguments/data passed to `expensive_task`. 
-    - Some minor configuration will be required in the `Job` object in `jops.py` to set the way the data should be passed. 
+    - Some minor configuration will be required in the `Job` object in `jobs.py` to set the way the data should be passed. 
     - In the current example, it is written to a `.npz` file when `Agent` calls `job.deploy()`, and it is loaded by the `gpu_session.py` to which it is assigned. 
 3. In case all jobs need to access shared data, this is passed in the shared data argument. At the moment, even an empty piece of data should be passed because `Agent` communicates that it has a job pending by populating `agent_pool/{agent_id}.POOL` with the location of the shared data (TODO needs to be fixed/auto-generated)
 4. In a separate terminal, run `watch -n 1 nvidia-smi` to observe usage of every GPU unit requested.
