@@ -1,0 +1,18 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "cwd": "/home/omulkin/gaia/parallelGPU",  // Explicit path
+            "args": ["0", "./lodge/"],
+            "env": {
+                "PYTHONPATH": "/home/omulkin/gaia/parallelGPU"
+            }
+        }
+    ]
+}
